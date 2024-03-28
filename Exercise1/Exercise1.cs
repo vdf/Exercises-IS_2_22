@@ -11,18 +11,18 @@ namespace Exercise1
         public void start()
         {
             Console.Out.WriteLine( "Start" );
-            engine_state = state_stopped;
+            engine_state = state_started;
         }
 
         public void stop()
         {
             Console.Out.WriteLine( "Stop" );
-            engine_state = state_started;
+            engine_state = state_stopped;
         }
 
         public String getState()
         {
-            String state = null;
+            String state = "start or stop";
 
             if( engine_state == state_stopped )
             {
