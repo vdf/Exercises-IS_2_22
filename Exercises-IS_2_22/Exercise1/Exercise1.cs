@@ -10,13 +10,13 @@ namespace Exercise1
 
         public void Start()
         {
-            Console.Out.WriteLine( "Start" );
+            Console.Out.WriteLine("Start");
             engineState = StateStarted;
         }
 
         public void Stop()
         {
-            Console.Out.WriteLine( "Stop" );
+            Console.Out.WriteLine("Stop");
             engineState = StateStopped;
         }
 
