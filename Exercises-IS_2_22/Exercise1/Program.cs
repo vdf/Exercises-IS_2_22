@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading;
 
 namespace Exercise1
@@ -19,16 +20,25 @@ namespace Exercise1
 
             eng.Start();
             Console.WriteLine("State: " + eng.GetState());
+            Console.WriteLine();
 
             FuelTank tank = new FuelTank();
-            Console.WriteLine("What is value of fuel now ? (int)");
-            tank.Fuel = int.Parse(Console.ReadLine());
-            if (tank.Fuel <= 0) {
-                Console.WriteLine("Fuel cannot be 0 or lower");
-            }
-            else
+            Console.WriteLine("How much fuel you want to add ? (int)");
+            int fuelToAdd = int.Parse(Console.ReadLine());
+            tank.Refuel(fuelToAdd);
+
+            Console.WriteLine("Fuel added. Current level is - " + tank.Fuel);
+
+            Console.WriteLine("Enter the distance you driven (double)");
+            string distanceDriven = Console.ReadLine().Replace(',', '.');
+            double X = double.Parse(distanceDriven, CultureInfo.InvariantCulture);
+            tank.ConsumeFuel(X);
+
+            Console.WriteLine("After driving fuel level is - " + tank.Fuel);
+
+            if (tank.IsFuelLow())
             {
-                Console.WriteLine($"Max volume is - {tank.MaxVolume}, Fuel now - {tank.Fuel}");
+                Console.WriteLine("Fuel is low!");
             }
 
             Console.ReadKey();
