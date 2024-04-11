@@ -11,10 +11,10 @@ namespace Exercise1
         public int Fuel;
         public int MaxVolume;
 
-        public FuelTank()
+        public FuelTank(int Fuel, int MaxVolume)
         {
-            Fuel = 0;
-            MaxVolume = 100;
+            this.Fuel = Fuel;
+            this.MaxVolume = MaxVolume;
         }
 
         public void ConsumeFuel(double distance)
