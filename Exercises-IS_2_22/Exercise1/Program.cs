@@ -22,13 +22,22 @@ namespace Exercise1
             Console.WriteLine("State: " + eng.GetState());
             Console.WriteLine();
 
-            FuelTank tank = new FuelTank();
+            FuelTank tank = new FuelTank(0, 100);
             Console.WriteLine("Max tank volume is - " + tank.MaxVolume);
             Console.WriteLine();
 
             Console.WriteLine("How much fuel you want to add ? (int)");
             int fuelToAdd = int.Parse(Console.ReadLine());
-            tank.Refuel(fuelToAdd);
+            bool success = tank.Refuel(fuelToAdd);
+
+            if (!success)
+            {
+                Console.WriteLine("You don't refuel the tank");
+            }
+            else
+            {
+                Console.WriteLine("Refuel was successeful");
+            }
 
             Console.WriteLine("Fuel added. Current level is - " + tank.Fuel);
             Console.WriteLine();

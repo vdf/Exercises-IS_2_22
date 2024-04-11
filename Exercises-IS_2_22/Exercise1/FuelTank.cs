@@ -29,9 +29,26 @@ namespace Exercise1
             set;
         }
 
-        public void Refuel(int amount)
+        public bool Refuel(int amount)
         {
-            Fuel = Math.Min(Fuel + amount, MaxVolume);
+            if (amount < 0)
+            {
+                Console.WriteLine("Cannot be less than 0");
+                return false;
+            }
+
+            if (Fuel + amount > MaxVolume)
+            {
+                Console.WriteLine("Cannot be more than MaxVolume (100)");
+                Fuel = MaxVolume;
+            }
+            else
+            {
+                Fuel += amount;
+            }
+
+            Console.WriteLine($"Current fuel level - {Fuel}");
+            return true;
         }
 
         public bool IsFuelLow()
