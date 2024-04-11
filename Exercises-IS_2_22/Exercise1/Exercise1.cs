@@ -36,4 +36,16 @@ namespace Exercise1
             return state;
         }
     }
+
+    class FuelTank
+    {
+        public int Fuel;
+        public int MaxVolume;
+
+        public FuelTank()
+        {
+            Fuel = 0;
+            MaxVolume = 100;
+        }
+    }
 }
