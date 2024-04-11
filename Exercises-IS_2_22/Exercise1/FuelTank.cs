@@ -8,19 +8,19 @@ namespace Exercise1
 {
     class FuelTank
     {
-        public int Fuel;
+        public int fuel;
         public int MaxVolume;
 
         public FuelTank(int Fuel, int MaxVolume)
         {
-            this.Fuel = Fuel;
+            this.fuel = Fuel;
             this.MaxVolume = MaxVolume;
         }
 
         public void ConsumeFuel(double distance)
         {
             int fuelConsumed = (int)Math.Ceiling(distance);
-            Fuel = Math.Max(Fuel - fuelConsumed, 0);
+            fuel = Math.Max(fuel - fuelConsumed, 0);
         }
 
         public double FuelEfficiency
@@ -37,24 +37,24 @@ namespace Exercise1
                 return false;
             }
 
-            if (Fuel + amount > MaxVolume)
+            if (fuel + amount > MaxVolume)
             {
                 Console.WriteLine("Cannot be more than MaxVolume (100)");
-                Fuel = MaxVolume;
+                fuel = MaxVolume;
             }
             else
             {
-                Fuel += amount;
+                fuel += amount;
             }
 
-            Console.WriteLine($"Current fuel level - {Fuel}");
+            Console.WriteLine($"Current fuel level - {fuel}");
             return true;
         }
 
         public bool IsFuelLow()
         {
             int lowFuelThreshold = 10;
-            return Fuel <= lowFuelThreshold;
+            return fuel <= lowFuelThreshold;
         }
     }
 }

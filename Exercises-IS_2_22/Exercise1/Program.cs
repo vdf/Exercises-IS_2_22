@@ -39,7 +39,7 @@ namespace Exercise1
                 Console.WriteLine("Refuel was successeful");
             }
 
-            Console.WriteLine("Fuel added. Current level is - " + tank.Fuel);
+            Console.WriteLine("Fuel added. Current level is - " + tank.fuel);
             Console.WriteLine();
 
             Console.WriteLine("Enter the distance you driven (double)");
@@ -48,7 +48,7 @@ namespace Exercise1
             tank.ConsumeFuel(X);
             Console.WriteLine();
 
-            Console.WriteLine("After driving fuel level is - " + tank.Fuel);
+            Console.WriteLine("After driving fuel level is - " + tank.fuel);
             Console.WriteLine();
 
             if (tank.IsFuelLow())
